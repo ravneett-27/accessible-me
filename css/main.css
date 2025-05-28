@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', Helvetica, sans-serif;
-  background-color: grey;
+  background-color: #333;
+  color: #eee;
   margin: 0;
   padding: 0;
 }
@@ -24,7 +25,7 @@ img {
   width: 100%;
 }
 
-.main-nav ul {
+nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -32,16 +33,24 @@ img {
   padding: 0;
 }
 
-.main-nav ul li {
+nav ul li {
   flex: 1;
   text-align: center;
 }
 
-.main-nav ul li a {
+nav ul li a {
   display: block;
   color: inherit;
   text-decoration: none;
   font-size: 1.25rem;
+}
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: 3px solid #005fcc;
+  outline-offset: 2px;
 }
 
 form input,
@@ -50,6 +59,11 @@ form textarea {
   width: 100%;
   margin-bottom: 1rem;
   padding: .5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
 }
 
 form textarea {
@@ -64,8 +78,42 @@ form button {
   border: 2px solid black;
   padding: 1rem;
   text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.site-footer {
+form button:hover,
+form button:focus {
+  background-color: #005fcc;
+  color: white;
+  border-color: #005fcc;
+  cursor: pointer;
+}
+
+footer {
   padding: 2rem 0;
+  text-align: center;
+  color: #ccc;
+}
+
+.skip-links {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #005fcc;
+  color: white;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.skip-links a:focus {
+  position: static;
+  top: 0;
+  left: 0;
+  display: block;
 }
